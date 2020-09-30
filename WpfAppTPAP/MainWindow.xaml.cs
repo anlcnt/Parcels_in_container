@@ -49,33 +49,9 @@ namespace WpfAppTPAP
                     parcles.Add(new Parcle(parcle.Width, parcle.Length, parcle.Weight));
                 }
 
-                List<Parcle> p = new List<Parcle>();
-                int length = parcles.Count;
-                for (int i = 0; i < length; i++)
-                {
+                List<Parcle> sortedParcles = parcles.OrderBy(parcle => parcle.GetArea() * -1).ToList();
 
-                    int count = i;
-                    int AreaMax = parcles[i].GetArea();
-
-                    int j = 0;
-                    foreach (Parcle itemIns in parcles)
-                    {
-                        if (AreaMax < itemIns.GetArea())
-                        {
-                            count = j;
-                            AreaMax = itemIns.GetArea();
-                        }
-                        j++;
-                    }
-
-                    p.Add(parcles[count]);
-                    parcles.RemoveAt(count);
-                    i--;
-                    length--;
-                    //
-                }
-
-                foreach (Parcle parcle in p)
+                foreach (Parcle parcle in sortedParcles)
                 {
                     LB_res.Items.Add(Convert.ToString(parcle.Width) + ' ' + Convert.ToString(parcle.Length) + ' ' + Convert.ToString(parcle.Weight));
                     //parcles.Add(new Parcle(parcle.Width, parcle.Length, parcle.Weight));
