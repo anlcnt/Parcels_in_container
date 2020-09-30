@@ -25,5 +25,8 @@ namespace WpfAppTPAP.ClassesCore
         public int Width { get; }
         public int Length { get; }
         public int Weight { get; }
+
+        public int Area => Width * Length;
+        public int FormFactor => Length / Width;
     }
 }
