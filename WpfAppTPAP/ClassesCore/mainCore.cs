@@ -36,6 +36,7 @@ namespace WpfAppTPAP.ClassesCore
             {
                 Pointer CoordsSystem = new Pointer();
 
+                //if ( ) 
 
             }
             else
