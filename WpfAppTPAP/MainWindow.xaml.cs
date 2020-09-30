@@ -27,6 +27,7 @@ namespace WpfAppTPAP
             this.count_parcles.PreviewTextInput += new TextCompositionEventHandler(textBox_PreviewTextInput);
             this.TB_length_cnt.PreviewTextInput += new TextCompositionEventHandler(textBox_PreviewTextInput);
             this.TB_wigth_cnt.PreviewTextInput += new TextCompositionEventHandler(textBox_PreviewTextInput);
+            grid_Loaded(Convert.ToInt32(count_parcles.Text));
         }
         void textBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
@@ -64,11 +65,6 @@ namespace WpfAppTPAP
             {
                 result.Add(new Parcle(100, 100, 1));
             }
-            /*
-            result.Add(new MyTable(1, "Майкл Джексон", "Thriller", 1982));
-            result.Add(new MyTable(2, "AC/DC", "Back in Black", 1980));
-            result.Add(new MyTable(3, "Bee Gees", "Saturday Night Fever", 1977));
-            result.Add(new MyTable(4, "Pink Floyd", "The Dark Side of the Moon", 1973));*/
             DG_Parcles.ItemsSource = result;
         }
 
@@ -77,17 +73,6 @@ namespace WpfAppTPAP
             grid_Loaded(Convert.ToInt32(count_parcles.Text));
         }
     }
-    class MyTable
-    {
-        public MyTable(int Width, int Length, int Weigth)
-        {
-            this.Width = Width;
-            this.Length = Length;
-            this.Weigth = Weigth;
-        }
-        public int Width { get; set; }
-        public int Length { get; set; }
-        public int Weigth { get; set; }
-    }
+    
 
 }
