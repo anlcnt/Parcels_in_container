@@ -18,7 +18,7 @@ namespace WpfAppTPAP.ClassesCore
             Weight = weight;
         }
 
-        public int Weight { get; }
+        public int Weight { get; set; }
 
     }
 }

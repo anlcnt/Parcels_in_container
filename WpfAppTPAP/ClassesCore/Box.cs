@@ -31,8 +31,8 @@ namespace WpfAppTPAP.ClassesCore
             Length = width;
         }
 
-        public int Width { get; }
-        public int Length { get; }
+        public int Width { get; set; }
+        public int Length { get; set; }
 
         public int GetArea() => Width * Length;
         public int GetFormFactor() => Length / Width;

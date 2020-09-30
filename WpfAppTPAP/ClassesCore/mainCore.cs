@@ -29,11 +29,19 @@ namespace WpfAppTPAP.ClassesCore
             Count = objDG.Count;
         }
 
+        void FromBigToLit()
+        {
+            List<Parcle> p = new List<Parcle>();
+            
+        }
+
         void BruteForce()
         {
             if(!Method)
             {
-                
+                Pointer CoordsSystem = new Pointer();
+
+
             }
             else
             {
