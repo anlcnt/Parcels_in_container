@@ -45,8 +45,40 @@ namespace WpfAppTPAP
                 LB_res.Items.Clear();
                 foreach (Parcle parcle in DG_Parcles.Items)
                 {
-                    LB_res.Items.Add(Convert.ToString(parcle.Width) + ' ' + Convert.ToString(parcle.Length) + ' ' + Convert.ToString(parcle.Weight));
+                    //LB_res.Items.Add(Convert.ToString(parcle.Width) + ' ' + Convert.ToString(parcle.Length) + ' ' + Convert.ToString(parcle.Weight));
                     parcles.Add(new Parcle(parcle.Width, parcle.Length, parcle.Weight));
+                }
+
+                List<Parcle> p = new List<Parcle>();
+                int length = parcles.Count;
+                for (int i = 0; i < length; i++)
+                {
+
+                    int count = i;
+                    int AreaMax = parcles[i].GetArea();
+
+                    int j = 0;
+                    foreach (Parcle itemIns in parcles)
+                    {
+                        if (AreaMax < itemIns.GetArea())
+                        {
+                            count = j;
+                            AreaMax = itemIns.GetArea();
+                        }
+                        j++;
+                    }
+
+                    p.Add(parcles[count]);
+                    parcles.RemoveAt(count);
+                    i--;
+                    length--;
+                    //
+                }
+
+                foreach (Parcle parcle in p)
+                {
+                    LB_res.Items.Add(Convert.ToString(parcle.Width) + ' ' + Convert.ToString(parcle.Length) + ' ' + Convert.ToString(parcle.Weight));
+                    //parcles.Add(new Parcle(parcle.Width, parcle.Length, parcle.Weight));
                 }
 
                 var obj = DG_Parcles.Items;

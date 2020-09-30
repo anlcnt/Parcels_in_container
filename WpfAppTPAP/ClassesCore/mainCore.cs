@@ -32,7 +32,28 @@ namespace WpfAppTPAP.ClassesCore
         void FromBigToLit()
         {
             List<Parcle> p = new List<Parcle>();
-            
+
+            int i = 0;
+            foreach (Parcle item in Parcles)
+            {
+                int count = i;
+                int AreaMax = item.GetArea();
+
+                int j = 0;
+                foreach (Parcle itemIns in Parcles)
+                {
+                    if (AreaMax < itemIns.GetArea())
+                    {
+                        count = j;
+                        AreaMax = itemIns.GetArea();
+                    }
+                    j++;
+                }
+
+                p.Add(Parcles[count]);
+                Parcles.RemoveAt(count);
+                i++;
+            }
         }
 
         void BruteForce()

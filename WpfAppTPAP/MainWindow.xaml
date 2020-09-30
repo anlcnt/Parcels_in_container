@@ -59,7 +59,7 @@
             </Grid>
         </GroupBox>
         <TextBox x:Name="result" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,20,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <ListBox x:Name="LB_res" Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="11,48,0,0" VerticalAlignment="Top" Width="100"/>
+        <ListBox x:Name="LB_res" Grid.Column="1" HorizontalAlignment="Left" Height="180" Margin="11,48,0,0" VerticalAlignment="Top" Width="119"/>
 
 
 
