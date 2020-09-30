@@ -19,8 +19,10 @@ namespace WpfAppTPAP.ClassesCore
 
         }
 
-        public int GetFreeSpaceAspectRatio()
+        // Возвращает коэффициент формы свободного пространства
+        public int GetFreeSpaceAspectRatio(List<Parcle> parcles)
         {
+
             return 0;
         }
     }

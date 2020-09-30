@@ -54,11 +54,15 @@ namespace WpfAppTPAP
                 {
                     LB_res.Items.Add(Convert.ToString(parcle.Width) + ' ' + Convert.ToString(parcle.Length) + ' ' + Convert.ToString(parcle.Weight));
                 }                
-
+                    
                 //запоминаем ящики
                 var obj = DG_Parcles.Items;
                 //запомиинаем контейнеры
                 Container container = new Container(Convert.ToInt32(TB_wigth_cnt.Text), Convert.ToInt32(TB_length_cnt.Text));
+
+                //Открываем окно конфигурации
+                Configuration configuration = new Configuration();
+                configuration.CurrentContainer = container;
             }
             else MessageBox.Show("Задайте значения посылок");
         }

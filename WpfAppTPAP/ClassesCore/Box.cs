@@ -34,7 +34,9 @@ namespace WpfAppTPAP.ClassesCore
         public int Width { get; set; }
         public int Length { get; set; }
 
+        // Возвращает площадь объекта
         public int GetArea() => Width * Length;
+        // Возвращает коэффициент формы
         public int GetFormFactor() => Length / Width;
     }
 }
