@@ -12,6 +12,7 @@ namespace WpfAppTPAP.ClassesCore
         List<Parcle> Parcles = new List<Parcle>();
         Container Container;
         bool Method;
+        int Count;
         //ItemCollection objDataGrid;
 
         public mainCore(Container container, bool method, ItemCollection objDG)
@@ -25,12 +26,12 @@ namespace WpfAppTPAP.ClassesCore
             //Parcles = parcles;
             Method = method;
             Container = container;
-
+            Count = objDG.Count;
         }
 
         void BruteForce()
         {
-            if(Method)
+            if(!Method)
             {
                 
             }
