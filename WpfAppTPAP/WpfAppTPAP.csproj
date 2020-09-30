@@ -70,6 +70,7 @@
     <Compile Include="ClassesCore\Container.cs" />
     <Compile Include="ClassesCore\Parcle.cs" />
     <Compile Include="ClassesCore\mainCore.cs" />
+    <Compile Include="ClassesCore\Pointer.cs" />
     <Compile Include="Configuration.xaml.cs">
       <DependentUpon>Configuration.xaml</DependentUpon>
     </Compile>
