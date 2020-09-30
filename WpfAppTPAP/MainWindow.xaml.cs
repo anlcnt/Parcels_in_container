@@ -62,7 +62,12 @@ namespace WpfAppTPAP
 
                 //Открываем окно конфигурации
                 Configuration configuration = new Configuration();
-                configuration.CurrentContainer = container;
+                //Configuration.Container = container;
+                configuration.Owner = this;
+                configuration.Show();
+
+                
+                //configuration.CurrentContainer = container;
             }
             else MessageBox.Show("Задайте значения посылок");
         }
