@@ -8,5 +8,15 @@ namespace WpfAppTPAP.ClassesCore
 {
     class mainCore
     {
+        List<Parcle> parcles = new List<Parcle>();
+        Container Container;
+
+        public mainCore(List<Parcle> parcles, Container container)
+        {
+            Container = container;
+            this.parcles = parcles;
+        }
+
+
     }
 }
