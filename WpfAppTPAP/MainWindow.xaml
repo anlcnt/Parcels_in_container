@@ -36,16 +36,10 @@
                     <ColumnDefinition Width="24*"/>
                     <ColumnDefinition Width="250*"/>
                 </Grid.ColumnDefinitions>
-                <DataGrid x:Name="DG_Parcles" HorizontalAlignment="Left" Height="330" Margin="3,62,0,0" VerticalAlignment="Top" Width="250" Grid.ColumnSpan="2" Grid.Column="1" >
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Width (mm)"/>
-                        <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Length (mm)"/>
-                        <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Weight (mm)"/>
-                    </DataGrid.Columns>
-                </DataGrid>
+                <DataGrid x:Name="DG_Parcles" HorizontalAlignment="Left" Height="330" Margin="3,62,0,0" VerticalAlignment="Top" Width="250" Grid.ColumnSpan="2" Grid.Column="1" />
                 <Label Content="Count Parcles" HorizontalAlignment="Left" Margin="3,10,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="1"/>
                 <TextBox x:Name="count_parcles" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="67,13,0,0" TextWrapping="Wrap" Text="8" VerticalAlignment="Top" Width="83"/>
-                <Button Content="Build Table" Grid.Column="2" HorizontalAlignment="Left" Margin="155,13,0,0" VerticalAlignment="Top" Width="75"/>
+                <Button Content="Build Table" Grid.Column="2" HorizontalAlignment="Left" Margin="155,13,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
             </Grid>
         </GroupBox>
         <GroupBox Header="Method" HorizontalAlignment="Left" Height="79" Margin="158,329,0,0" VerticalAlignment="Top" Width="142" Grid.Column="1" Grid.RowSpan="2">
@@ -58,6 +52,8 @@
                 <RadioButton Content="New" Grid.Column="1" HorizontalAlignment="Left" Margin="0,30,0,0" VerticalAlignment="Top"/>
             </Grid>
         </GroupBox>
+        <TextBox x:Name="result" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,20,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <ListBox x:Name="LB_res" Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="11,48,0,0" VerticalAlignment="Top" Width="100"/>
 
 
 

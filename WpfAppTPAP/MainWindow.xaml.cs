@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfAppTPAP.ClassesCore;
 
 namespace WpfAppTPAP
 {
@@ -24,6 +25,8 @@ namespace WpfAppTPAP
         {
             InitializeComponent();
             this.count_parcles.PreviewTextInput += new TextCompositionEventHandler(textBox_PreviewTextInput);
+            this.TB_length_cnt.PreviewTextInput += new TextCompositionEventHandler(textBox_PreviewTextInput);
+            this.TB_wigth_cnt.PreviewTextInput += new TextCompositionEventHandler(textBox_PreviewTextInput);
         }
         void textBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
@@ -34,10 +37,57 @@ namespace WpfAppTPAP
 
         private void Sumbit_Click(object sender, RoutedEventArgs e)
         {
-            //DG_Parcles
+            if (DG_Parcles.Items.Count != 0)
+            {//запоминаем все посылки
+                List<Parcle> parcles = new List<Parcle>();
+
+                LB_res.Items.Clear();
+                foreach (Parcle parcle in DG_Parcles.Items)
+                {
+                    LB_res.Items.Add(Convert.ToString(parcle.Width) + ' ' + Convert.ToString(parcle.Length) + ' ' + Convert.ToString(parcle.Weight));
+                    parcles.Add(new Parcle(parcle.Width, parcle.Length, parcle.Weight));
+                }
+
+                //запомиинаем контейнеры
+                Container container = new Container(Convert.ToInt32(TB_wigth_cnt.Text), Convert.ToInt32(TB_length_cnt.Text));
+            }
+            else MessageBox.Show("Задайте значения посылок");
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e) => Close();
+
+        private void grid_Loaded(int count)
+        {
+            List<Parcle> result = new List<Parcle>();
+
+            for(int i=0; i<count;i++)
+            {
+                result.Add(new Parcle(100, 100, 1));
+            }
+            /*
+            result.Add(new MyTable(1, "Майкл Джексон", "Thriller", 1982));
+            result.Add(new MyTable(2, "AC/DC", "Back in Black", 1980));
+            result.Add(new MyTable(3, "Bee Gees", "Saturday Night Fever", 1977));
+            result.Add(new MyTable(4, "Pink Floyd", "The Dark Side of the Moon", 1973));*/
+            DG_Parcles.ItemsSource = result;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            grid_Loaded(Convert.ToInt32(count_parcles.Text));
+        }
+    }
+    class MyTable
+    {
+        public MyTable(int Width, int Length, int Weigth)
+        {
+            this.Width = Width;
+            this.Length = Length;
+            this.Weigth = Weigth;
+        }
+        public int Width { get; set; }
+        public int Length { get; set; }
+        public int Weigth { get; set; }
     }
 
 }
