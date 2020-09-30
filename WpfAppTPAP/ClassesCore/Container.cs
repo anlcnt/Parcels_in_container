@@ -35,11 +35,7 @@ namespace WpfAppTPAP.ClassesCore
         public int Width { get; }
         public int Length { get; }
 
-        public int MinY { get; set; }
-        public int MinX { get; set; }
-        public int MaxY { get; set; }
-        public int MaxX { get; set; }
-
+        
         public int Area => Width * Length;
         public int FormFactor => Length / Width;
 
