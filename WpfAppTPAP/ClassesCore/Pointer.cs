@@ -8,6 +8,13 @@ namespace WpfAppTPAP.ClassesCore
 {
     class Pointer
     {
+        public Pointer(int minX, int minY, int maxX, int maxY)
+        {
+            MinX = minX;
+            MinY = minY;
+            MaxX = maxX;
+            MaxY = maxY;
+        }
         public Pointer()
         {
             MinX = 0;

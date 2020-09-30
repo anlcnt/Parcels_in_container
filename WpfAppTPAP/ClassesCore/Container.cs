@@ -18,5 +18,10 @@ namespace WpfAppTPAP.ClassesCore
         {
 
         }
+
+        public int GetFreeSpaceAspectRatio()
+        {
+            return 0;
+        }
     }
 }

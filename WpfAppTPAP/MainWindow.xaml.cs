@@ -66,7 +66,8 @@ namespace WpfAppTPAP
 
             for(int i=0; i<count;i++)
             {
-                result.Add(new Parcle(100, 100, 1));
+                Parcle currentParcle = new Parcle(100, 100, 1);
+                result.Add(currentParcle);
             }
             DG_Parcles.ItemsSource = result;
         }
@@ -74,6 +75,11 @@ namespace WpfAppTPAP
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             grid_Loaded(Convert.ToInt32(count_parcles.Text));
+        }
+
+        private void DG_Parcles_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
     
