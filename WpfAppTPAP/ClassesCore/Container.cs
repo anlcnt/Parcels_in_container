@@ -27,6 +27,7 @@ namespace WpfAppTPAP.ClassesCore
 
         public Container(int width)
         {
+            if (width == 0) { width = 1; }
             Width = width;
             Length = width;
         }
