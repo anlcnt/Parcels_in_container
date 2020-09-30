@@ -8,19 +8,22 @@ namespace WpfAppTPAP.ClassesCore
 {
     class Container
     {
-        public Container(int width, int height)
+        public Container(int width, int length)
         {
             Width = width;
-            Height = height;
+            Length = length;
         }
 
         public Container(int width)
         {
             Width = width;
-            Height = width;
+            Length = width;
         }
 
         public int Width { get; }
-        public int Height { get; }
+        public int Length { get; }
+
+        public int Area => Width * Length;
+        public int FormFactor => Length / Width;
     }
 }
