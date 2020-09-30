@@ -23,14 +23,21 @@ namespace WpfAppTPAP
         public MainWindow()
         {
             InitializeComponent();
+            this.count_parcles.PreviewTextInput += new TextCompositionEventHandler(textBox_PreviewTextInput);
+        }
+        void textBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            //if (!Char.IsDigit(e.Text, 0) || (sender as TextBox).Text.Length >= _inputValue.Length || e.Text != _inputValue)
+            //e.Handled = true;
+            e.Handled = !(Char.IsDigit(e.Text, 0));
         }
 
         private void Sumbit_Click(object sender, RoutedEventArgs e)
         {
-
+            //DG_Parcles
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e) => Close();
-      
     }
+
 }
