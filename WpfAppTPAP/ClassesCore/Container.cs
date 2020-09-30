@@ -24,8 +24,18 @@ namespace WpfAppTPAP.ClassesCore
 
         public Container(int width, int length)
         {
-            Width = width;
-            Length = length;
+            if (width == 0) { width = 1; }
+            if (length == 0) { length = 1; }
+            if (width > length)
+            {
+                Width = length;
+                Length = width;
+            }
+            else
+            {
+                Width = width;
+                Length = length;
+            }
         }
 
         public Container(int width)
@@ -40,5 +50,6 @@ namespace WpfAppTPAP.ClassesCore
 
         public int Area => Width * Length;
         public int FormFactor => Length / Width;
+
     }
 }
