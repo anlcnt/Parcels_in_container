@@ -8,19 +8,22 @@ namespace WpfAppTPAP.ClassesCore
 {
     class Parcle
     {
-        public Parcle(int width, int height)
+        public Parcle(int width, int length, int weight)
         {
             Width = width;
-            Height = height;
+            Length = length;
+            Weight = weight;
         }
 
-        public Parcle(int width)
+        public Parcle(int width, int weight)
         {
             Width = width;
-            Height = width;
+            Length = width;
+            Weight = weight;
         }
 
         public int Width { get; }
-        public int Height { get; }
+        public int Length { get; }
+        public int Weight { get; }
     }
 }
