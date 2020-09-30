@@ -30,10 +30,7 @@ namespace WpfAppTPAP
 
         }
 
-        private void Exit_Click(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Exit();
-        }
+        private void Exit_Click(object sender, RoutedEventArgs e) => Close();
       
     }
 }
