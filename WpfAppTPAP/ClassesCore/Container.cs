@@ -6,38 +6,17 @@ using System.Threading.Tasks;
 
 namespace WpfAppTPAP.ClassesCore
 {
-    class Container
+    class Container : Box
     {
                 
-        public Container(int width, int length)
+        public Container(int width, int length) : base(width, length)
         {
-            if (width == 0) { width = 1; }
-            if (length == 0) { length = 1; }
-            if (width > length)
-            {
-                Width = length;
-                Length = width;
-            }
-            else
-            {
-                Width = width;
-                Length = length;
-            }
+
         }
 
-        public Container(int width)
+        public Container(int width) : base(width)
         {
-            if (width == 0) { width = 1; }
-            Width = width;
-            Length = width;
+
         }
-
-        public int Width { get; }
-        public int Length { get; }
-
-        
-        public int Area => Width * Length;
-        public int FormFactor => Length / Width;
-
     }
 }
