@@ -34,9 +34,29 @@ namespace WpfAppTPAP.ClassesCore
         {
             if(!Method)
             {
-                Pointer CoordsSystem = new Pointer();
+                Pointer[] CoordsSystem = new Pointer[2] { new Pointer(0, 0), new Pointer(0, 0) };
 
-                //if ( ) 
+                foreach (Parcle item in Parcles)
+                {
+                    foreach (Pointer coords in CoordsSystem)
+                    {
+                        item.Vertical(coords.X, coords.Y);
+                        if (item.x0 == coords.X && item.x1 == coords.X &&
+                            item.y0 == coords.Y && item.y3 == coords.Y)
+                        {
+                            //счет коэф
+                            //запоминаем минимум
+                        }
+
+                        item.Gorizontal(coords.X, coords.Y);
+                        if (item.x0 == coords.X && item.x1 == coords.X &&
+                            item.y0 == coords.Y && item.y3 == coords.Y)
+                        {
+                            //счет коэф
+                        }
+                    }
+                }
+                
 
             }
             else
