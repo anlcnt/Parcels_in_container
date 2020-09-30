@@ -45,21 +45,18 @@ namespace WpfAppTPAP
                 LB_res.Items.Clear();
                 foreach (Parcle parcle in DG_Parcles.Items)
                 {
-                    //LB_res.Items.Add(Convert.ToString(parcle.Width) + ' ' + Convert.ToString(parcle.Length) + ' ' + Convert.ToString(parcle.Weight));
                     parcles.Add(new Parcle(parcle.Width, parcle.Length, parcle.Weight));
                 }
+                //соритровка
+                parcles = parcles.OrderBy(parcle => parcle.GetArea() * -1).ToList();
 
-                List<Parcle> sortedParcles = parcles.OrderBy(parcle => parcle.GetArea() * -1).ToList();
-
-                foreach (Parcle parcle in sortedParcles)
+                foreach (Parcle parcle in parcles)
                 {
                     LB_res.Items.Add(Convert.ToString(parcle.Width) + ' ' + Convert.ToString(parcle.Length) + ' ' + Convert.ToString(parcle.Weight));
-                    //parcles.Add(new Parcle(parcle.Width, parcle.Length, parcle.Weight));
-                }
+                }                
 
+                //запоминаем ящики
                 var obj = DG_Parcles.Items;
-
-
                 //запомиинаем контейнеры
                 Container container = new Container(Convert.ToInt32(TB_wigth_cnt.Text), Convert.ToInt32(TB_length_cnt.Text));
             }
