@@ -67,6 +67,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ClassesCore\Box.cs" />
     <Compile Include="ClassesCore\Container.cs" />
     <Compile Include="ClassesCore\Parcle.cs" />
     <Compile Include="ClassesCore\mainCore.cs" />
