@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.960
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfAppTPAP", "WpfAppTPAP\WpfAppTPAP.csproj", "{5AD02BC7-8D5A-49FF-9378-0CB1DCE1DEE3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5AD02BC7-8D5A-49FF-9378-0CB1DCE1DEE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AD02BC7-8D5A-49FF-9378-0CB1DCE1DEE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AD02BC7-8D5A-49FF-9378-0CB1DCE1DEE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AD02BC7-8D5A-49FF-9378-0CB1DCE1DEE3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {062E0DC9-44A4-4B77-8032-BD2A8E68AB11}
+	EndGlobalSection
+EndGlobal
