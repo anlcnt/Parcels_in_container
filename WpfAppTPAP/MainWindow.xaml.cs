@@ -49,6 +49,8 @@ namespace WpfAppTPAP
                     parcles.Add(new Parcle(parcle.Width, parcle.Length, parcle.Weight));
                 }
 
+                var obj = DG_Parcles.Items;
+
                 //запомиинаем контейнеры
                 Container container = new Container(Convert.ToInt32(TB_wigth_cnt.Text), Convert.ToInt32(TB_length_cnt.Text));
             }

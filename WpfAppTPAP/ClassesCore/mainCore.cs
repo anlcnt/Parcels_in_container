@@ -8,18 +8,27 @@ namespace WpfAppTPAP.ClassesCore
 {
     class mainCore
     {
-        List<Parcle> parcles = new List<Parcle>();
+        List<Parcle> Parcles = new List<Parcle>();
         Container Container;
+        bool Method;
 
-        public mainCore(List<Parcle> parcles, Container container)
+        public mainCore(List<Parcle> parcles, Container container, bool method)
         {
             Container = container;
-            this.parcles = parcles;
+            Parcles = parcles;
+            Method = method;
         }
 
         void BruteForce()
         {
-            
+            if(Method)
+            {
+                
+            }
+            else
+            {
+
+            }
         }
     }
 }
