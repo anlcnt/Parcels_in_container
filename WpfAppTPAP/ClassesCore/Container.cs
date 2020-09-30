@@ -8,20 +8,7 @@ namespace WpfAppTPAP.ClassesCore
 {
     class Container
     {
-        public Container(int width, int length, List<Parcle> parcles)
-        {
-            Width = width;
-            Length = length;
-            Parcles = parcles;
-        }
-
-        public Container(int width, List<Parcle> parcles)
-        {
-            Width = width;
-            Length = width;
-            Parcles = parcles;
-        }
-
+                
         public Container(int width, int length)
         {
             if (width == 0) { width = 1; }
@@ -46,7 +33,11 @@ namespace WpfAppTPAP.ClassesCore
 
         public int Width { get; }
         public int Length { get; }
-        public List<Parcle> Parcles { get; set; }
+
+        public int MinY { get; set; }
+        public int MinX { get; set; }
+        public int MaxY { get; set; }
+        public int MaxX { get; set; }
 
         public int Area => Width * Length;
         public int FormFactor => Length / Width;

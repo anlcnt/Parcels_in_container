@@ -17,6 +17,9 @@ namespace WpfAppTPAP.ClassesCore
             this.parcles = parcles;
         }
 
-
+        void BruteForce()
+        {
+            
+        }
     }
 }
