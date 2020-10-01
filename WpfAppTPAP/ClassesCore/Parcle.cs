@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WpfAppTPAP.ClassesCore
 {
-    class Parcle : Box
+    public class Parcle : Box
     {
         public Parcle(int width, int length, int weight) : base(width, length)
         {

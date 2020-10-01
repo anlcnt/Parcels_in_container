@@ -34,16 +34,16 @@ namespace WpfAppTPAP
         }*/
         //private Container Container { get; set; }
 
-        public Configuration()
+        public Configuration(List<Parcle> parcles, Container container,bool method)
         {
             Container x = new Container(1, 1);
             /*ContainerWidth = CurrentContainer.Width;
             ContainerLength = CurrentContainer.Length;*/
 
             InitializeComponent();
-            /*WpfAppTPAP.ClassesCore.Container container = x;
+            //WpfAppTPAP.ClassesCore.Container container = x;
             TB_cnt_lenght.Text = Convert.ToString(container.Length);
-            TB_cnt_wight.Text = Convert.ToString(container.Width);*/
+            TB_cnt_wight.Text = Convert.ToString(container.Width);
         }
 
 

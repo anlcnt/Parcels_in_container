@@ -15,6 +15,7 @@ namespace WpfAppTPAP.ClassesCore
         int Count;
         //ItemCollection objDataGrid;
 
+        public List<Parcle> GetParcles() => Parcles;
         public mainCore(Container container, bool method, ItemCollection objDG)
         {            
             foreach (Parcle parcle in objDG)
@@ -22,6 +23,7 @@ namespace WpfAppTPAP.ClassesCore
                 //LB_res.Items.Add(Convert.ToString(parcle.Width) + ' ' + Convert.ToString(parcle.Length) + ' ' + Convert.ToString(parcle.Weight));
                 Parcles.Add(new Parcle(parcle.Width, parcle.Length, parcle.Weight));
             }
+            Sort();
 
             //Parcles = parcles;
             Method = method;
@@ -29,6 +31,10 @@ namespace WpfAppTPAP.ClassesCore
             Count = objDG.Count;
         }
 
+        void Sort()
+        {
+            Parcles = Parcles.OrderBy(parcle => parcle.GetArea() * -1).ToList();
+        }
 
         void BruteForce()
         {

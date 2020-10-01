@@ -28,7 +28,10 @@ namespace WpfAppTPAP
             this.TB_length_cnt.PreviewTextInput += new TextCompositionEventHandler(textBox_PreviewTextInput);
             this.TB_wigth_cnt.PreviewTextInput += new TextCompositionEventHandler(textBox_PreviewTextInput);
             grid_Loaded(Convert.ToInt32(count_parcles.Text));
+
         }
+        public string SelectedValueMethod { get; private set; }
+
         void textBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             //if (!Char.IsDigit(e.Text, 0) || (sender as TextBox).Text.Length >= _inputValue.Length || e.Text != _inputValue)
@@ -40,7 +43,7 @@ namespace WpfAppTPAP
         {
             if (DG_Parcles.Items.Count != 0)
             {//запоминаем все посылки
-                List<Parcle> parcles = new List<Parcle>();
+                /*List<Parcle> parcles = new List<Parcle>();
 
                 LB_res.Items.Clear();
                 foreach (Parcle parcle in DG_Parcles.Items)
@@ -53,15 +56,29 @@ namespace WpfAppTPAP
                 foreach (Parcle parcle in parcles)
                 {
                     LB_res.Items.Add(Convert.ToString(parcle.Width) + ' ' + Convert.ToString(parcle.Length) + ' ' + Convert.ToString(parcle.Weight));
-                }                
+                }     */           
                     
                 //запоминаем ящики
                 var obj = DG_Parcles.Items;
                 //запомиинаем контейнеры
                 Container container = new Container(Convert.ToInt32(TB_wigth_cnt.Text), Convert.ToInt32(TB_length_cnt.Text));
+                //method
+                bool method;
+                if (SelectedValueMethod == "Legacy"){
+                    method = true;
+                }
+                else{
+                    method = false;
+                }
+
+
+                List<Parcle> parcles = new List<Parcle>();
+                mainCore isCore = new mainCore(container, method, obj);
+                parcles = isCore.GetParcles();
+
 
                 //Открываем окно конфигурации
-                Configuration configuration = new Configuration();
+                Configuration configuration = new Configuration(parcles,container,method);
                 //Configuration.Container = container;
                 configuration.Owner = this;
                 configuration.Show();
@@ -94,6 +111,14 @@ namespace WpfAppTPAP
         private void DG_Parcles_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            if (sender is RadioButton item)
+            {
+                SelectedValueMethod = item.Content.ToString();
+            }
         }
     }
     
